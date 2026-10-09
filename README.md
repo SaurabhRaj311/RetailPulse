@@ -1,3 +1,4 @@
+🚀 **Live Interactive Dashboard:** [Click Here to Open App](https://floqzuzrjoxucwiry29rcr.streamlit.app)
 # RetailPulse — Retail Analytics & Customer Intelligence Platform
 
 RetailPulse is an end-to-end retail analytics project that transforms online transaction data into actionable business insights. It combines data cleaning, exploratory data analysis, SQL analytics, customer segmentation, cohort retention analysis, and an interactive Streamlit dashboard.
