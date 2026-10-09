@@ -176,7 +176,7 @@ if len(monthly) >= 2:
 
         compare_col2.metric(
             "Reporting Period Revenue",
-            f"£{latest_month['GrossRevenue']:, .2f}",
+            f"£{latest_month['GrossRevenue']:,.2f}",
         )
 
         if pd.notna(change_pct):
