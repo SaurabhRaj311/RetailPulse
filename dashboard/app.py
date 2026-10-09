@@ -160,41 +160,40 @@ monthly["RevenueChangePct"] = (
 )
 
 if len(monthly) >= 2:
-    latest_month = monthly.iloc[-1]
-    previous_month = monthly.iloc[-2]
+        latest_month = monthly.iloc[-1]
+        previous_month = monthly.iloc[-2]
 
-    change_pct = latest_month["RevenueChangePct"]
+        change_pct = latest_month["RevenueChangePct"]
 
-    st.subheader("Monthly Revenue Comparison")
+        st.subheader("Monthly Revenue Comparison")
 
-    compare_col1, compare_col2, compare_col3 = st.columns(3)
+        compare_col1, compare_col2, compare_col3 = st.columns(3)
 
-    compare_col1.metric(
-        "Latest Month",
-        latest_month["YearMonth"],
-    )
-
-    compare_col2.metric(
-        "Latest Month Revenue",
-        f"£{latest_month['GrossRevenue']:,.2f}",
-    )
-
-    if pd.notna(change_pct):
-        compare_col3.metric(
-            "Change vs Previous Observed Month",
-            f"{change_pct:+.1f}%",
-        )
-    else:
-        compare_col3.metric(
-            "Change vs Previous Observed Month",
-            "Not available",
+        compare_col1.metric(
+            "Reporting Period",
+            latest_month["YearMonth"],
         )
 
-    st.caption(
-        f"Comparison: {previous_month['YearMonth']} to "
-        f"{latest_month['YearMonth']}. This compares the latest two "
-        "months available under the current filters."
-    )
+        compare_col2.metric(
+            "Reporting Period Revenue",
+            f"£{latest_month['GrossRevenue']:, .2f}",
+        )
+
+        if pd.notna(change_pct):
+            compare_col3.metric(
+                "Change vs Previous Observed Month",
+                f"{change_pct:+.1f}%",
+            )
+        else:
+            compare_col3.metric(
+                "Change vs Previous Observed Month",
+                "Not available",
+            )
+
+        st.caption(
+            f"Comparison: {previous_month['YearMonth']} to {latest_month['YearMonth']}. "
+            "This compares the latest two months available under the current filters."
+        )
 
 # Plot monthly gross sales revenue
 monthly_chart = px.line(
