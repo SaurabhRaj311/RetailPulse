@@ -49,8 +49,10 @@ dashboard_page = st.sidebar.radio(
     ],
 )
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-DATA_PATH = BASE_DIR / "data" / "processed" / "online_retail_clean.csv"
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_PATH = os.path.join(BASE_DIR, "data", "processed", "online_retail_clean.csv")
 
 # Load data function
 @st.cache_data
