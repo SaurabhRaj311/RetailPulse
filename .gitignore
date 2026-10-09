@@ -1,0 +1,32 @@
+﻿# Ignore the local Python virtual environment
+.venv/
+
+# Ignore Python cache and compiled files
+__pycache__/
+*.py[cod]
+
+# Ignore notebook checkpoint folders
+.ipynb_checkpoints/
+
+# Ignore local environment variables and secrets
+.env
+.env.*
+
+# Ignore generated SQLite databases and journal files
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# Ignore generated dataset files while preserving directory placeholders
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Ignore temporary operating-system files
+.DS_Store
+Thumbs.db
+
+# Ignore local editor configuration
+.vscode/
