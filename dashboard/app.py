@@ -51,8 +51,13 @@ dashboard_page = st.sidebar.radio(
 
 import os
 
+# Base path handling for Streamlit Cloud & local execution
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_PATH = os.path.join(BASE_DIR, "data", "processed", "online_retail_clean.csv")
+
+if not os.path.exists(DATA_PATH):
+    # Fallback path directly from current working directory
+    DATA_PATH = os.path.join("data", "processed", "online_retail_clean.csv")
 
 # Load data function
 @st.cache_data
